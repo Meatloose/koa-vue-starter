@@ -31,7 +31,7 @@ div.backTop(v-show="show", @click="scrollTop(step)", :style="{ bottom: bottom }"
 <script>
 import Icon from 'components/common/Icon'
 import scrollTop from 'utils/scrollTop'
-import throttle from 'utils/throttle'
+import throttle from 'assets/libs/throttle'
 import 'assets/icons/arrow-up.svg'
 
 export default {
@@ -57,11 +57,17 @@ export default {
   },
 
   created () {
-    window.document.addEventListener('scroll', throttle(() => {
+    this.handle = throttle(() => {
       const scroll = document.documentElement.scrollTop || document.body.scrollTop
       if (scroll > 1500) this.show = true
       else this.show = false
-    }, 500), false)
+    }, 500)
+
+    document.addEventListener('scroll', this.handle, false)
+  },
+
+  destroyed () {
+    document.removeEventListener('scroll', this.handle, false)
   },
 
   methods: {
