@@ -1,0 +1,24 @@
+@import '../functions/px2rem';
+
+@mixin size($px...) {
+  $len: length($px);
+  $width: '';
+  $height: '';
+
+  @if $len > 2 or $len < 1 {
+    @warn 'Only need 1-2 parameters at most';
+  }
+
+  @if $len == 2 {
+    $width: px2rem(nth($px, 1));
+    $height: px2rem(nth($px, 2));
+  }
+
+  @if $len == 1 {
+    $width: px2rem(nth($px, 1));
+    $height: px2rem(nth($px, 1));
+  }
+
+  width: $width;
+  height: $height;
+}

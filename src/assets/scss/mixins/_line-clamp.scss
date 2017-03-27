@@ -1,0 +1,16 @@
+@mixin line-clamp($line: 1) {
+  overflow: hidden;
+  @if $line==1 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  @else {
+    display: -webkit-box;
+    display:         box;
+
+    -webkit-line-clamp: $line;
+            line-clamp: $line;
+    -webkit-box-orient: vertical;
+            box-orient: vertical;
+  }
+}

@@ -1,0 +1,1 @@
+export const NATIVE_API_CHECK = 'NATIVE_API_CHECK'

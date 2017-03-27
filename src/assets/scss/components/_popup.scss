@@ -1,0 +1,77 @@
+@import '../variables/variables';
+@import '../mixins/border';
+@import './commonModalWrap';
+
+.mask,
+.mask-transparent {
+  &.active {
+    .popup {
+      transform: none;
+
+      opacity: 1;
+    }
+  }
+}
+
+.popup {
+  top: 25%;
+
+  width: 87.5%;
+  margin-left: -43.75%;
+
+  transition-timing-function: cubic-bezier(.3, 0, 0, 1.3);
+  transform: translateY(240%) scale(.8);
+  pointer-events: inherit;
+
+  background: #fff;
+  box-shadow: 0 0 8px 3px rgba(25, 25, 25, .15);
+  a {
+    float: left;
+
+    text-align: center;
+
+    color: inherit;
+
+    @include border(left, $border-color);
+    &:first-child {
+      background-image: none;
+    }
+  }
+  .popup-alert {
+    width: 100%;
+  }
+  .popup-confirm,
+  .popup-cancel {
+    width: 50%;
+  }
+}
+
+.popup-header {
+  font-size: 1.1rem;
+
+  padding: 1rem 1rem 0 1rem;
+
+  text-align: center;
+}
+
+.popup-body {
+  font-size: .9rem;
+  line-height: 1.2;
+
+  margin: 0;
+  padding: 1.25rem 1rem;
+
+  text-align: center;
+  word-break: break-all;
+
+  @include border(bottom, $border-color);
+}
+
+.popup-footer {
+  font-size: 1.1rem;
+  line-height: 3.125rem;
+
+  text-align: center;
+
+  color: $blue;
+}

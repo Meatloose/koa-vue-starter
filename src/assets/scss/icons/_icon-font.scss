@@ -1,0 +1,22 @@
+.icon,
+[class^='icon-'],
+[class*=' icon-'] {
+  font-family: 'icomoon';
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+
+  text-transform: none;
+
+  speak: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+$icons: (account-box: 900, account-circle: 901, add: 902, add-box: 903, add-circle: 904, add-circle-outline: 905, airplane: 906, arrow-back: 907, arrow-down: 908, arrow-dropdown: 909, arrow-dropup: 90a, arrow-forward: 90b, arrow-left: 90c, arrow-right: 90d, arrow-up: 90e, asterisk: 90f, backspace: 910, calendar: 911, call: 912, cancel-circle: 913, cancel-circle-outline: 914, check: 915, checkbox-box: 916, checkbox-box-outline: 917, checkbox-circle: 918, checkbox-circle-outline: 919, circle: 91a, close: 91b, coupon: 91c, edit: 91d, error: 91e, error-outline: 91f, flight-land: 920, flight-takeoff: 921, food: 922, group: 923, group-add: 924, group-outline: 925, help: 926, help-outline: 927, info: 928, info-outline: 929, location: 92a, loop: 92b, mail: 92c, payment: 92d, person: 92e, person-add: 92f, person-outline: 930, phone: 931, phone-android: 932, phone-iphone: 933, radio-button: 934, radio-button-outline: 935, refresh: 936, refresh2: 937, remove: 938, remove-circle: 939, remove-circle-outline: 93a, search: 93b, spinner: 93c, spinner-curve: 93d, spinner-sun: 93e, star: 93f, star-half: 940, star-outline: 941, sync: 942, time: 943, time-alarm: 944, timer: 945);
+
+@each $item, $code in $icons {
+  .icon-#{$item}:before {
+    content: '\e#{$code}';
+  }
+}

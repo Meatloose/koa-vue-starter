@@ -1,0 +1,85 @@
+@import '../variables/variables';
+@import '../mixins/typography';
+
+// Text Styles
+// Generate contextual modifier classes for font size and weight.
+
+.text {
+  // 5 Grades: Extra large, Large, Medium, Small, Extra small
+  &.xl {
+    @include text-size-variant($font-size-xl, $line-height-lg);
+  }
+  &.lg {
+    @include text-size-variant($font-size-lg, $line-height);
+  }
+  &.md {
+    @include text-size-variant($font-size-base, $line-height);
+  }
+  &.sm {
+    @include text-size-variant($font-size-sm, $line-height);
+  }
+  &.xs {
+    @include text-size-variant($font-size-xs, $line-height-sm);
+  }
+  // Text alignment
+  &.a-l {
+    @extend %t-a-l;
+  }
+  &.a-r {
+    @extend %t-a-r;
+  }
+  &.a-c {
+    @extend %t-a-c;
+  }
+  // bold
+  &.bold {
+    font-weight: bold;
+  }
+  &.bolder {
+    font-weight: bolder;
+  }
+  // decoration
+  &.underline {
+    text-decoration: underline;
+  }
+  &.overline {
+    text-decoration: overline;
+  }
+  &.linethrough {
+    text-decoration: line-through;
+  }
+  // Generate contextual modifier classes for colorizing the text.
+  &.black {
+    @include text-color-variant($black);
+  }
+  &.blacklight {
+    @include text-color-variant($black-light);
+  }
+  &.white {
+    @include text-color-variant($white);
+  }
+  &.gray {
+    @include text-color-variant($gray);
+  }
+  &.graylight {
+    @include text-color-variant($gray-light);
+  }
+  &.blue {
+    @include text-color-variant($blue);
+  }
+  &.bluelight {
+    @include text-color-variant($blue-light);
+  }
+  &.red {
+    @include text-color-variant($red);
+  }
+  &.orange {
+    @include text-color-variant($orange);
+  }
+  &.green {
+    @include text-color-variant($green);
+  }
+  &.greenlight {
+    @include text-color-variant($green-light);
+  }
+}

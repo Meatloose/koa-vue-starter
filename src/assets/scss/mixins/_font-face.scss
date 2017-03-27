@@ -1,0 +1,9 @@
+@mixin font-face($path, $postfix) {
+  @font-face {
+    font-family: 'icomoon';
+    src: url($path + 'icomoon.eot?' + $postfix);
+    src: url($path + 'icomoon.eot?' + $postfix + '#iefix') format('embedded-opentype'), url($path + 'icomoon.ttf?' + $postfix) format('truetype'), url($path + 'icomoon.woff?' + $postfix) format('woff'), url($path + 'icomoon.svg?' + $postfix) format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+}

@@ -1,0 +1,39 @@
+@import '../variables/variables';
+@import '../mixins/animation';
+@import '../mixins/border';
+
+@include keyframes(spin) {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.indicator {
+  font-size: $font-size-xs;
+
+  overflow: hidden;
+
+  color: $gray;
+  background-color: $white;
+
+  @extend %pos-r;
+  @include border(top-bottom, $border-color);
+  &-content {
+    line-height: 3.75rem;
+
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+  }
+  .refresh2 {
+    width: $font-size-xl;
+    height: $font-size-xl;
+  }
+  .spinner {
+    @include animation(spin 1s linear infinite);
+  }
+}

@@ -1,0 +1,15 @@
+@import './calc';
+
+@mixin autoCalcFz {
+  @media screen and (min-width: 320px) and (max-width: 640px) {
+    html {
+      @include calc(font-size, '100% + (100vw - 320px) / 16');
+    }
+  }
+
+  @media screen and (min-width: 641px) {
+    html {
+      font-size: 200%;
+    }
+  }
+}

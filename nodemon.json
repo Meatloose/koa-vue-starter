@@ -1,0 +1,12 @@
+{
+  "verbose": false,
+  "ignore": [
+    "build",
+    "coverage",
+    "data",
+    "dist",
+    "node_modules",
+    "src",
+    "test"
+  ]
+}

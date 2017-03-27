@@ -1,0 +1,11 @@
+@import '../variables/variables';
+
+.loading,
+.popup {
+  position: fixed;
+  z-index: 999;
+  left: 50%;
+  transition: .5s;
+  opacity: 0;
+  border-radius: $border-radius-lg;
+}
