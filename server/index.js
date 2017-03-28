@@ -10,7 +10,6 @@ import etag from 'koa-etag'
 import favicon from 'koa-favicon'
 import serve from 'koa-static'
 import bodyParser from 'koa-bodyparser'
-import bearerToken from 'koa-bearer-token'
 import _debug from 'debug'
 import config from './config'
 import error from './error'
@@ -37,9 +36,8 @@ app.use(convert(historyApiFallback({
 //   store: redisStore()
 // })))
 
-// bodyParser && bearerToken
+// bodyParser
 app.use(bodyParser())
-app.use(bearerToken())
 
 // etag works together with conditional-get
 app.use(compress())
